@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap");
+
+/*ABOUT CONTAINER PART2 section */
+section .About-container {
+  position: relative;
+  right : 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5rem;
+  font-family: "Do Hyeon", sans-serif;
+  opacity: 1;
+}
+
+.About-container.active{
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+.About-container #Preview-container{
+  position: absolute;
+  content : '';
+  right : 0;
+  top : 0;
+  width : 100%;
+  height : 100vh;
+  background-color: #000;
+}
+
+#Preview-container.active{
+  animation: PreviewActive 2s;
+}
+
+
+@keyframes PreviewActive{
+  0%{
+    transform: translateX(100%);
+    transition: all 1s ease-in-out;
+  }
+
+  100%{
+    transform: translateX(0);
+    transition: all 1s ease-in-out;
+  }
+}
+
+.About-container #About-contents.active{
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+.About-container #About-contents {
+  position: relative;
+  width: 40rem;
+  height: 30rem;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 1;
+}
+
+#About-contents .About-title {
+  display: block;
+  width: 100%;
+  height: 20rem;
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 0.5rem;
+}
+
+#About-contents .sub-contents {
+  display: block;
+  width: 100%;
+  height: 15rem;
+  font-size: 1.5rem;
+  font-weight: 100;
+}
+
+#About-contents .MusicApp-icons {
+  position: relative;
+  width: 26rem;
+  height: 26rem;
+}
+
+.MusicApp-icons .icons-box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  overflow: hidden;
+}
+
+.icons-box img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/*ABOUT CONTAINER PART2 section */
+section .AboutTrack-container {
+  position: relative;
+  right : 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  padding: 3rem;
+  font-family: "Do Hyeon", sans-serif;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+}
+
+.AboutTrack-container #About-contents {
+  position: relative;
+  width: 40rem;
+  height: 30rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  opacity: 1;
+}
+
+.AboutTrack-container .AboutTrack-title {
+  position: relative;
+  width: 100%;
+  height: max-content;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.AboutTrack-title h1 {
+  font-size: 3.5rem;
+  color: #fff;
+  font-weight: 100;
+}
+
+.AboutTrack-container .AboutTrack-subTitle {
+  position: relative;
+  padding: 1rem 0;
+  width: 40rem;
+  font-size: 1.4rem;
+  color: #fff;
+  font-weight: 100;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: start;
+}
+
+.AboutTrack-container .CHART1-Component {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.CHART1-Component .CHART1-MV {
+  position: relative;
+  width: 100%;
+  height: 40rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.CHART1-MV iframe {
+  position: relative;
+  width: 50rem;
+  height: 20rem;
+}
+
+.CHART1-MV .CHART1-Album {
+  position: absolute;
+  width: 8rem;
+  height: 8rem;
+  overflow: hidden;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.CHART1-Album img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.CHART1-MV .CHART1-name {
+  position: relative;
+  width: 100%;
+  height: 5rem;
+  text-align: center;
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+.CHART1-MV .CHART1-PREVIEW {
+  position: relative;
+  width: 10rem;
+  height: 3rem;
+  border: none;
+  background-color: rgb(55, 110, 4);
+  color: #fff;
+  font-family: var(--font-family);
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+}

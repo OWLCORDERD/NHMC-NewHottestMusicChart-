@@ -1,0 +1,298 @@
+.Header-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  font-family: var(--font-family);
+  overflow : hidden;
+}
+
+.Header-container #Preview-container {
+  position: absolute;
+  content: "";
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  z-index: 2000;
+  display: none;
+}
+
+#Preview-container.active {
+  display: block;
+  animation: Action 2s;
+}
+
+@keyframes Action{
+  0%{
+    transform: translateX(100%);
+  }
+  100%{
+    transition: all 0.5s ease-in-out;
+    transform: translateX(0);
+  }
+}
+
+.Header-container .navbar {
+  position: fixed;
+  z-index: 2500;
+  top: 0;
+  left: 0;
+  padding: 3rem;
+  width: 100%;
+  height: 15vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 1s ease-in-out;
+}
+
+.navbar.active {
+  background-color: #000;
+}
+
+.navbar .logo {
+  position: relative;
+  width: max-content;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.logo h1 {
+  font-size: 3rem;
+}
+
+.logo p {
+  font-size: 1rem;
+}
+
+.navbar .menu-button {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  width: 100px;
+  height: 70px;
+  cursor: pointer;
+}
+
+.menu-button span {
+  display: inline-block;
+  width: 60px;
+  height: 8px;
+  background-color: #fff;
+}
+
+.navbar .menu-button:hover span {
+  width: 60px;
+  transition: all 0.5s linear;
+}
+
+.menu-button span:nth-child(1) {
+  width: 45px;
+}
+
+.menu-button span:nth-child(2) {
+  width: 60px;
+}
+
+.Header-container #Slider-container {
+  position: absolute;
+  right : 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+}
+
+#Slider-container.active{
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+@keyframes SliderImg {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    transition-duration: 0.5s;
+  }
+}
+
+#Slider-container #First-Slider {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+#Slider-container #First-Slider.active {
+  display: block;
+  animation: SliderImg 1s linear;
+}
+
+#First-Slider::before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+#First-Slider .ALBUM {
+  position: absolute;
+  top : 50%;
+  left : 50%;
+  transform: translate(-50%, -50%);
+  width: 15rem;
+  height: 15rem;
+  z-index: 100;
+  box-shadow: 3px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+#First-Slider img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#Slider-container .Slider-contents {
+  position: absolute;
+  left: 5rem;
+  padding: 2rem;
+  width: 40rem;
+  height: 50rem;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.Slider-contents p {
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+.Slider-contents h1 {
+  text-transform: uppercase;
+  font-size: 4rem;
+  color: #fff;
+}
+
+.Slider-contents .Sub-menu {
+  position: relative;
+  width: 100%;
+  height: max-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.Sub-menu .Slider-select {
+  position: relative;
+  width: 100%;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.Slider-select .select-button {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.select-button a {
+  display: inline-block;
+  width: 8rem;
+  height: 1rem;
+  border: 2px solid #fff;
+}
+
+.select-button a.active {
+  background-color: #fff;
+  transition: all 0.5s ease-in-out;
+}
+
+.Slider-select .select-name {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.Slider-select .select-name h1 {
+  position: relative;
+  width: 8rem;
+  text-align: center;
+  font-size: 1.2rem;
+  display: inline-block;
+  opacity: 0;
+}
+
+.select-name h1.active {
+  opacity: 1;
+  transition: all 1s ease-in-out;
+}
+
+.active .Preview {
+  position: absolute;
+  width: 20rem;
+  height: 15rem;
+  right : 5rem;
+  bottom : 10%;
+  transform: translateY(-10%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.active .Arrow {
+  font-size: 5rem;
+  color: #fff;
+  animation: AnimationArrow 2s infinite;
+}
+
+@keyframes AnimationArrow {
+  0% {
+    opacity: 0;
+    margin-right: 2rem;
+  }
+
+  100% {
+    opacity: 1;
+    margin-right: 0;
+  }
+}
