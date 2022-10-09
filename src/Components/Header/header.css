@@ -7,21 +7,24 @@
   background-color: #000;
   font-family: var(--font-family);
   overflow : hidden;
+  z-index: 200;
 }
 
 .Header-container #Preview-container {
   position: absolute;
   content: "";
-  right: 0;
+  right: -100%;
   width: 100%;
   height: 100vh;
   background-color: #000;
-  z-index: 2000;
-  display: none;
+  z-index: -1;
+  opacity: 0;
+  transition : all 1s ease-in-out;
 }
 
-#Preview-container.active {
-  display: block;
+.Header-container #Preview-container.active {
+  opacity: 1;
+  right : 0;
   animation: Action 2s;
 }
 
@@ -113,11 +116,21 @@
   align-items: center;
   width: 100%;
   height: 100%;
-  opacity: 1;
+  z-index: -1;
 }
 
 #Slider-container.active{
-  opacity: 0;
+  display: none;
+  transition: all 0.5s ease-in-out;
+}
+
+#Slider-container.active .Slider-contents{
+  margin-left : -100%;
+  transition: all 1s ease-in-out;
+}
+
+#Slider-container.active .Preview{
+  margin-right : -100%;
   transition: all 1s ease-in-out;
 }
 
@@ -262,7 +275,7 @@
   transition: all 1s ease-in-out;
 }
 
-.active .Preview {
+.Header-container #Preview {
   position: absolute;
   width: 20rem;
   height: 15rem;
@@ -277,9 +290,14 @@
   color: #fff;
   cursor: pointer;
   z-index: 10;
+  display: block;
 }
 
-.active .Arrow {
+#Preview.active{
+  display: none;
+}
+
+.Header-container .Arrow {
   font-size: 5rem;
   color: #fff;
   animation: AnimationArrow 2s infinite;

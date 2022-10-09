@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap");
 
 /*ABOUT CONTAINER PART2 section */
-section .About-container {
+section #About-container {
   position: relative;
   right : 0;
   width: 100%;
@@ -12,28 +12,33 @@ section .About-container {
   align-items: center;
   padding: 5rem;
   font-family: "Do Hyeon", sans-serif;
-  opacity: 1;
+  opacity: 0;
+  transition : all 0.4s linear;
 }
 
-.About-container.active{
-  opacity: 0;
+#About-container.active{
+  opacity: 1;
   transition: all 1s ease-in-out;
 }
 
-.About-container #Preview-container{
+#About-container #Preview-container{
   position: absolute;
   content : '';
-  right : 0;
+  right : -100%;
   top : 0;
   width : 100%;
   height : 100vh;
   background-color: #000;
+  transition: all 1s ease-in-out;
+  opacity: 0;
+  z-index: 1000;
 }
 
-#Preview-container.active{
+#About-container #Preview-container.active{
+  opacity: 1;
+  right : 0;
   animation: PreviewActive 2s;
 }
-
 
 @keyframes PreviewActive{
   0%{
@@ -47,12 +52,12 @@ section .About-container {
   }
 }
 
-.About-container #About-contents.active{
+#About-container #About-contents.active{
   opacity: 0;
   transition: all 1s ease-in-out;
 }
 
-.About-container #About-contents {
+#About-container #About-contents {
   position: relative;
   width: 40rem;
   height: 30rem;
@@ -103,21 +108,62 @@ section .About-container {
   height: 100%;
 }
 
+#About-container #home-button{
+  position: absolute;
+  left : 5rem;
+  bottom : 10%;
+  width : 15rem;
+  height : 8rem;
+  color : #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  cursor : pointer;
+}
+
+#About-container #home-button.active{
+  opacity: 0;
+  margin-left: -100px;
+  transition: all 0.5s ease-in-out;
+}
+
+#home-button .Home-icon{
+  font-size: 2rem;
+}
+
+#home-button h1{
+  font-size: 2rem;
+}
+
 /*ABOUT CONTAINER PART2 section */
-section .AboutTrack-container {
+section #AboutTrack-container {
   position: relative;
   right : 0;
   width: 100%;
   height: 100vh;
-  background-color: #000;
   padding: 3rem;
   font-family: "Do Hyeon", sans-serif;
+  opacity: 0;
+  transition: all 0.4s linear;
+}
+
+section #AboutTrack-container.active{
+  opacity: 1;
+}
+
+#AboutTrack-container .PART2-section{
+  position: relative;
+  top : 0;
+  left : 0;
+  width : 100%;
+  height : 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   place-items: center;
 }
 
-.AboutTrack-container #About-contents {
+.PART2-section #About-contents {
   position: relative;
   width: 40rem;
   height: 30rem;
@@ -128,7 +174,7 @@ section .AboutTrack-container {
   opacity: 1;
 }
 
-.AboutTrack-container .AboutTrack-title {
+.PART2-section .AboutTrack-title {
   position: relative;
   width: 100%;
   height: max-content;
@@ -143,7 +189,7 @@ section .AboutTrack-container {
   font-weight: 100;
 }
 
-.AboutTrack-container .AboutTrack-subTitle {
+.PART2-section .AboutTrack-subTitle {
   position: relative;
   padding: 1rem 0;
   width: 40rem;
@@ -156,7 +202,7 @@ section .AboutTrack-container {
   text-align: start;
 }
 
-.AboutTrack-container .CHART1-Component {
+.PART2-section .CHART1-Component {
   position: relative;
   width: 100%;
   height: 100%;
@@ -216,4 +262,39 @@ section .AboutTrack-container {
   font-weight: bold;
   font-size: 1.2rem;
   cursor: pointer;
+}
+
+#AboutTrack-container .Preview {
+  position: absolute;
+  width: 20rem;
+  height: 15rem;
+  left : 5rem;
+  bottom : 10%;
+  transform: translateY(-10%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10;
+}
+
+
+#About-container .Preview{
+  position: absolute;
+  width: 20rem;
+  height: 15rem;
+  right : 5rem;
+  bottom : 10%;
+  transform: translateY(-10%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10;
 }

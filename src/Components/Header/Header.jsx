@@ -10,19 +10,18 @@ import ITZYThumNail from "../../assets/Image/ITZY/ITZY-Profile.jpg";
 import ITZYAlbum from "../../assets/Image/ITZY/ITZY-Profile.jpg";
 import { CgArrowLongRightC } from "react-icons/cg";
 import About from "../About/PART1";
-import About2 from "../About/PART2";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import {motion} from "framer-motion";
 
 function Header() {
   const [selectClick, setSelectClick] = useState("#");
+
+  const [previewClick, setPreviewClick] = useState("#");
 
   window.addEventListener("scroll", function () {
     var Navbar = document.querySelector(".navbar");
 
     var scroll = window.scrollY;
-
-    console.log(scroll);
 
     if (scroll > 0) {
       Navbar.classList.add("active");
@@ -30,6 +29,31 @@ function Header() {
       Navbar.classList.remove("active");
     }
   });
+
+  const textAnimation = {
+    initial : {
+      opacity : 0,
+      x : "-30%"
+    },
+    animate : {
+      opacity : 1,
+      x : 0,
+      transition : {
+        staggerChildren : 0.8,
+        duration : 2
+      }
+    }
+  }
+
+  const textAnimation2 = {
+    initial : {
+      opacity : 0,
+    },
+    animate : {
+      opacity : 1
+    }
+  }
+
 
   return (
     <div className="Header-container">
@@ -46,12 +70,12 @@ function Header() {
         </div>
       </div>
 
-      <div className = {selectClick === "#prevActive" ? "active" : ''} id="Slider-container">
-        <div className="Slider-contents">
-          <p>2022 MUSIC CHART</p>
-          <h1>2022 Latest Idol Ranking</h1>
+      <div className = {previewClick === "#prevActive" ? "active" : ''} id="Slider-container">
+        <motion.div className="Slider-contents" variants={textAnimation} initial = "initial" animate = "animate">
+          <motion.p variants={textAnimation2}>2022 MUSIC CHART</motion.p>
+          <motion.h1 variants={textAnimation2}>2022 Latest Idol Ranking</motion.h1>
 
-          <div className="Sub-menu">
+          <motion.div className="Sub-menu" variants={textAnimation2}>
             <div className="Slider-select">
               <div className="select-name">
                 <h1 className={selectClick === "#" ? "active" : ""}>
@@ -91,19 +115,12 @@ function Header() {
                 ></a>
               </div>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         <div id="First-Slider" className={selectClick === "#" ? "active" : ""}>
           <img src={NewJeansAlbum} alt="" className="ALBUM" />
           <img src={NewJeansThumNail} alt="" />
-          <div
-            className="Preview"
-            onClick={() => setSelectClick("#prevActive")}
-          >
-            <CgArrowLongRightC className="Arrow" />
-            <p>ABOUT NHMC</p>
-          </div>
         </div>
 
         <div
@@ -112,10 +129,6 @@ function Header() {
         >
           <img src={IVEAlbum} alt="" className="ALBUM" />
           <img src={IVEThumNail} alt="" />
-          <div className="Preview">
-            <CgArrowLongRightC className="Arrow" />
-            <p>ABOUT NHMC</p>
-          </div>
         </div>
 
         <div
@@ -124,10 +137,6 @@ function Header() {
         >
           <img src={BlackPinkAlbum} alt="" className="ALBUM" />
           <img src={BlackPinkThumNail} alt="" />
-          <div className="Preview">
-            <CgArrowLongRightC className="Arrow" />
-            <p>ABOUT NHMC</p>
-          </div>
         </div>
 
         <div
@@ -136,18 +145,19 @@ function Header() {
         >
           <img src={ITZYAlbum} alt="" className="ALBUM" />
           <img src={ITZYThumNail} alt="" />
-          <div className="Preview">
-            <CgArrowLongRightC className="Arrow" />
-            <p>ABOUT NHMC</p>
-          </div>
         </div>
       </div>
 
+      <motion.div id="Preview" className = {previewClick === "#prevActive" ? "active" : ''} onClick={() => setPreviewClick("#prevActive")} initial = {{opacity : 0, y : 100}} animate = {{opacity : 1, y : 0}} transition = {{duration : 1, delay : 2}}>
+        <CgArrowLongRightC className="Arrow" />
+          <p>ABOUT NHMC</p>
+      </motion.div>
+
       <div
         id="Preview-container"
-        className={selectClick === "#prevActive" ? "active" : ""}
+        className={previewClick === "#prevActive" ? "active" : ""}
       >
-        <About/>
+        <About previewClick = {previewClick} setPreviewClick = {setPreviewClick}/>
       </div>
 
     </div>

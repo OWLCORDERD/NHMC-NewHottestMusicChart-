@@ -4,17 +4,19 @@ import { useEffect } from "react";
 import { CgArrowLongRightC } from "react-icons/cg";
 import PART2 from "./PART2";
 import { useState } from "react";
+import { click } from "@testing-library/user-event/dist/click";
+import {AiFillHome} from "react-icons/ai";
 
-function About() {
+function About(props) {
   useEffect(() => {
     console.log(data);
   });
 
-  const [previewClick, setPreviewClick] = useState("#");
+  const [part2Active, setPart2Active] = useState("#");
 
   return (
-    <div className="About-container">
-      <div className={previewClick === "#PART2" ? "active" : ''} id="About-contents">
+    <div id="About-container" className = {props.previewClick === "#prevActive" ? "active" : ''}>
+      <div className={part2Active === "#PART2" ? "active" : ''} id="About-contents">
         <h1 className="About-title">THIS YEAR’S HOTTEST CHART UPDATE</h1>
 
         <p className="sub-contents">
@@ -23,7 +25,7 @@ function About() {
         </p>
       </div>
 
-      <div className={previewClick === "#PART2" ? "active" : ''} id="About-contents">
+      <div className={part2Active === "#PART2" ? "active" : ''} id="About-contents">
         <div className="MusicApp-icons">
           <div className="icons-box">
             {data.logo.map((item) => {
@@ -33,16 +35,21 @@ function About() {
         </div>
       </div>
 
-      <div className="Preview" onClick={()=>setPreviewClick("#PART2")}>
+      <div className="Preview" onClick={()=>setPart2Active("#PART2")}>
             <CgArrowLongRightC className="Arrow" />
             <p>NHMC TOP 1 ?</p>
-          </div>
+      </div>
 
-          <div
+      <div id = "home-button" className = {part2Active === "#PART2" ? "active" : ''} onClick={()=>props.setPreviewClick("#")}>
+        <AiFillHome className = "Home-icon"/>
+        <h1>HOME</h1>
+      </div>
+
+      <div
         id="Preview-container"
-        className={previewClick === "#PART2" ? "active" : ""}
+        className={part2Active === "#PART2" ? "active" : ""}
       >
-        <PART2/>
+        <PART2 part2Active = {part2Active} setPart2Active = {setPart2Active}/>
       </div>
       
       </div>
