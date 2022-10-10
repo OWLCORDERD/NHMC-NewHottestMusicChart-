@@ -7,7 +7,7 @@ import { CgArrowLongLeftC } from "react-icons/cg";
 
 function PART2(props) {
   return (
-    <div id="AboutTrack-container" className = {props.part2Active === "#PART2" ? "active" : ""}>
+    <div id="AboutTrack-container" className = {props.part2Active2 === "#PART2" ? "active" : ""}>
       
       <div className = "PART2-section">
       <div className="About-contents">
@@ -46,7 +46,7 @@ function PART2(props) {
         </div>
       </div>
 
-      <div className="Preview" onClick={()=>props.setPart2Active("#")}>
+      <div className="Preview" onClick={()=>props.setPart2Active2("#")}>
             <CgArrowLongLeftC className="Arrow" />
             <p>NHMC TOP 1 ?</p>
       </div>

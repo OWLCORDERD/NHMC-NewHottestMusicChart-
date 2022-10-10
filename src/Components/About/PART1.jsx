@@ -12,11 +12,9 @@ function About(props) {
     console.log(data);
   });
 
-  const [part2Active, setPart2Active] = useState("#");
-
   return (
     <div id="About-container" className = {props.previewClick === "#prevActive" ? "active" : ''}>
-      <div className={part2Active === "#PART2" ? "active" : ''} id="About-contents">
+      <div className={props.part2Active === "#PART2" ? "active" : ''} id="About-contents">
         <h1 className="About-title">THIS YEAR’S HOTTEST CHART UPDATE</h1>
 
         <p className="sub-contents">
@@ -25,7 +23,7 @@ function About(props) {
         </p>
       </div>
 
-      <div className={part2Active === "#PART2" ? "active" : ''} id="About-contents">
+      <div className={props.part2Active === "#PART2" ? "active" : ''} id="About-contents">
         <div className="MusicApp-icons">
           <div className="icons-box">
             {data.logo.map((item) => {
@@ -35,21 +33,21 @@ function About(props) {
         </div>
       </div>
 
-      <div className="Preview" onClick={()=>setPart2Active("#PART2")}>
+      <div className="Preview" onClick={()=>props.setPart2Active("#PART2")}>
             <CgArrowLongRightC className="Arrow" />
             <p>NHMC TOP 1 ?</p>
       </div>
 
-      <div id = "home-button" className = {part2Active === "#PART2" ? "active" : ''} onClick={()=>props.setPreviewClick("#")}>
+      <div id = "home-button" className = {props.part2Active === "#PART2" ? "active" : ''} onClick={()=>props.setPreviewClick("#")}>
         <AiFillHome className = "Home-icon"/>
         <h1>HOME</h1>
       </div>
 
       <div
         id="Preview-container"
-        className={part2Active === "#PART2" ? "active" : ""}
+        className={props.part2Active === "#PART2" ? "active" : ""}
       >
-        <PART2 part2Active = {part2Active} setPart2Active = {setPart2Active}/>
+        <PART2 part2Active2 = {props.part2Active} setPart2Active2 = {props.setPart2Active}/>
       </div>
       
       </div>

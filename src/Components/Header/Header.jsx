@@ -18,6 +18,8 @@ function Header() {
 
   const [previewClick, setPreviewClick] = useState("#");
 
+  const [part2Active, setPart2Active] = useState("#");
+
   window.addEventListener("scroll", function () {
     var Navbar = document.querySelector(".navbar");
 
@@ -63,11 +65,15 @@ function Header() {
           <p>New Hottest Music Chart</p>
         </div>
 
-        <div className="menu-button">
-          <span></span>
-          <span></span>
-          <span></span>
+        <div className = "navbar-menu">
+          <ul>
+            <li><a href = "/">HOME</a></li>
+            <li><a href = "#" onClick={()=>setPreviewClick("#prevActive")}>ABOUT</a></li>
+            <li><a href = "#" onClick={()=>setPart2Active("#PART2")}>LIVE TOP 1</a></li>
+            <li><a href = "#">TrackList</a></li>
+          </ul>
         </div>
+
       </div>
 
       <div className = {previewClick === "#prevActive" ? "active" : ''} id="Slider-container">
@@ -157,7 +163,7 @@ function Header() {
         id="Preview-container"
         className={previewClick === "#prevActive" ? "active" : ""}
       >
-        <About previewClick = {previewClick} setPreviewClick = {setPreviewClick}/>
+        <About previewClick = {previewClick} setPreviewClick = {setPreviewClick} part2Active = {part2Active} setPart2Active = {setPart2Active}/>
       </div>
 
     </div>

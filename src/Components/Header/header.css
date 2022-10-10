@@ -76,35 +76,32 @@
   font-size: 1rem;
 }
 
-.navbar .menu-button {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: flex-start;
-  width: 100px;
-  height: 70px;
-  cursor: pointer;
+.navbar .navbar-menu ul{
+  width : 60rem;
+  height : 5rem;
 }
 
-.menu-button span {
+.navbar-menu ul > li{
   display: inline-block;
-  width: 60px;
-  height: 8px;
-  background-color: #fff;
+  width : 25%;
+  height : 5rem;
 }
 
-.navbar .menu-button:hover span {
-  width: 60px;
-  transition: all 0.5s linear;
+.navbar-menu ul > li > a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width : max-content;
+  height : 100%;
+  color : #fff;
+  font-weight: bold;
+  font-family: var(--font-family);
+  font-size: 1.2rem;
+  text-align: center;
 }
 
-.menu-button span:nth-child(1) {
-  width: 45px;
-}
-
-.menu-button span:nth-child(2) {
-  width: 60px;
+.navbar-menu ul > li > a:hover{
+  border-bottom: 5px solid #fff;
 }
 
 .Header-container #Slider-container {
