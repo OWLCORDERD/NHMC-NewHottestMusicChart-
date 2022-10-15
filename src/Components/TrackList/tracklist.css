@@ -1,0 +1,154 @@
+@charset "utf-8";
+
+.TrackList-container{
+    position: relative;
+    width : 100%;
+    height : max-content;
+    background-color: #000;
+    top : 0;
+    left : 0;
+    padding : 10rem 3rem 2rem 3rem;
+}
+
+.TrackList-container::-webkit-scrollbar{
+    display: none;
+}
+
+.TrackList-container .contents-box{
+    position: relative;
+    width : 100%;
+    height : 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.contents-box .content-title{
+    font-size: 1.8rem;
+    color : #fff;
+    font-family: var(--font-Audio);
+    text-transform: uppercase;
+}
+
+.contents-box .sub-title{
+    font-size: 1.2rem;
+    color : #fff;
+    font-family: var(--DoHyeon-font);
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+}
+
+.contents-box select{
+    width : 10rem;
+    height : 2rem;
+    font-family: var(--font-Audio);
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+}
+
+.TrackList-container .TrackList-box{
+    position: relative;
+    width : 100%;
+    height : max-content;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    place-items: center;
+    gap : 2rem;
+    padding : 3rem;
+}
+
+.TrackList-item:hover{
+    cursor : pointer;
+    transition : all 0.5s ease-in-out;
+}
+
+.TrackList-item:hover .item-img{
+    transform: scale(1.05);
+    transition : all 0.7s ease-in-out;
+    border: 5px solid #fff;
+}
+
+
+.TrackList-item:hover .item-img::before{
+    opacity: 1;
+}
+
+.TrackList-item:hover .item-img video{
+    opacity: 1;
+    transition: all 0.5s ease-in;
+}
+
+.TrackList-box .TrackList-item{
+    position: relative;
+    width : 100%;
+    height : 100%;
+}
+
+.TrackList-item .item-img{
+    position: relative;
+    top : 0;
+    width : 100%;
+    height : 10rem;
+    border: 5px solid transparent;
+    z-index: 0;
+}
+
+.item-img img{
+    width : 100%;
+    height : 100%;
+    object-fit: cover;
+}
+
+.item-img video{
+    position: absolute;
+    top : 0;
+    left : 0;
+    width : 100%;
+    height : 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: all 0.5s ease-out;
+    z-index: 100;
+}
+
+.item-img::before{
+    position: absolute;
+    top : 0;
+    left : 0;
+    width : 100%;
+    height : 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    content : '▶';
+    z-index: 1000;
+    opacity: 0;
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color : #fff;
+    transition: all 0.8s ease-in;
+}
+
+.TrackList-item .music-title{
+    position: relative;
+    width : 100%;
+    height : 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.music-title h1{
+    font-size: 1.5rem;
+    color : #fff;
+    font-family: var(--font-Audio);
+}
+
+.music-title p{
+    font-size: 1.2rem;
+    color : #fff;
+    font-family: var(--font-Audio);
+}

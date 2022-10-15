@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 
 * {
   box-sizing: border-box;
@@ -9,11 +10,14 @@
   list-style: none;
 }
 
+html::-webkit-scrollbar{
+  display: none;
+}
+
 :root {
   --font-family: "Montserrat", cursive;
   --DoHyeon-font: "Do Hyeon", sans-serif;
-  --white-color: #fff;
-  --black-color: #000;
+  --font-Audio : "Audiowide", cursive;
 
   --white-opacity: rgba(255, 255, 255, 0.4);
   --black-opacity: rgba(255, 255, 255, 0.6);

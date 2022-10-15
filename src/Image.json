@@ -94,5 +94,48 @@
     {
       "src": "./Image/Icon/플로 아이콘.png"
     }
+  ],
+  "TRACKLIST": [
+    {
+      "image" : "./Image/IVE/AfterLike-Movie.jpg",
+      "title" : "After LIKE",
+      "group" : "IVE",
+      "mv" : "./video/IVE_AfterLIKE_MV.mp4"
+    },
+    {
+      "image" : "./Image/NEWJEANS/hypeboy-Movie.jpg",
+      "title" : "Hype Boy",
+      "group" : "New Jeans"
+    },
+    {
+      "image" : "./Image/BlackPink/PinkVenom-Movie.jpg",
+      "title" : "Pink Venom",
+      "group" : "Black Pink"
+    },
+    {
+      "image" : "./Image/ITZY/Sneakers-Movie.jpg",
+      "title" : "Sneakers",
+      "group" : "ITZY"
+    },
+    {
+      "image" : "./Image/IVE/AfterLike-Movie.jpg",
+      "title" : "After LIKE",
+      "group" : "IVE"
+    },
+    {
+      "image" : "./Image/IVE/AfterLike-Movie.jpg",
+      "title" : "After LIKE",
+      "group" : "IVE"
+    },
+    {
+      "image" : "./Image/IVE/AfterLike-Movie.jpg",
+      "title" : "After LIKE",
+      "group" : "IVE"
+    },
+    {
+      "image" : "./Image/IVE/AfterLike-Movie.jpg",
+      "title" : "After LIKE",
+      "group" : "IVE"
+    }
   ]
 }

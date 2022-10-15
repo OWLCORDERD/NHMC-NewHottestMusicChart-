@@ -38,7 +38,7 @@
   }
 }
 
-.Header-container .navbar {
+.navbar {
   position: fixed;
   z-index: 2500;
   top: 0;
@@ -50,7 +50,8 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  transition: all 1s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  font-family: var(--font-family);
 }
 
 .navbar.active {
@@ -187,8 +188,8 @@
   position: absolute;
   left: 5rem;
   padding: 2rem;
-  width: 40rem;
-  height: 50rem;
+  width: 35rem;
+  height: 40rem;
   z-index: 100;
   display: flex;
   flex-direction: column;
@@ -202,7 +203,7 @@
 
 .Slider-contents h1 {
   text-transform: uppercase;
-  font-size: 4rem;
+  font-size: 3.5rem;
   color: #fff;
 }
 
@@ -239,7 +240,7 @@
 
 .select-button a {
   display: inline-block;
-  width: 8rem;
+  width: 6rem;
   height: 1rem;
   border: 2px solid #fff;
 }
@@ -260,9 +261,9 @@
 
 .Slider-select .select-name h1 {
   position: relative;
-  width: 8rem;
+  width: 6rem;
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 0.9rem;
   display: inline-block;
   opacity: 0;
 }

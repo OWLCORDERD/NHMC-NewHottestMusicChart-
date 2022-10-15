@@ -3,15 +3,16 @@ import "./header.css";
 import NewJeansThumNail from "../../assets/Image/NEWJEANS/NEW-JEANS.jpg";
 import NewJeansAlbum from "../../assets/Image/NEWJEANS/NEWJEANS-Elbum.jpg";
 import IVEThumNail from "../../assets/Image/IVE/AfterLike-Profile.jpeg";
-import IVEAlbum from "../../assets/Image/IVE/AfterLike-Profile.jpeg";
+import IVEAlbum from "../../assets/Image/IVE/IVE-AfterLike.jpg";
 import BlackPinkThumNail from "../../assets/Image/BlackPink/PinkVenom-Profile.jpg";
 import BlackPinkAlbum from "../../assets/Image/BlackPink/PinkVenom-Album.jpg";
 import ITZYThumNail from "../../assets/Image/ITZY/ITZY-Profile.jpg";
-import ITZYAlbum from "../../assets/Image/ITZY/ITZY-Profile.jpg";
+import ITZYAlbum from "../../assets/Image/ITZY/Sneakers-Album.jpg";
 import { CgArrowLongRightC } from "react-icons/cg";
 import About from "../About/PART1";
 import { useState } from "react";
 import {motion} from "framer-motion";
+import Navbar from "./Navbar";
 
 function Header() {
   const [selectClick, setSelectClick] = useState("#");
@@ -59,22 +60,8 @@ function Header() {
 
   return (
     <div className="Header-container">
-      <div className="navbar">
-        <div className="logo">
-          <h1>NHMC</h1>
-          <p>New Hottest Music Chart</p>
-        </div>
 
-        <div className = "navbar-menu">
-          <ul>
-            <li><a href = "/">HOME</a></li>
-            <li><a href = "#" onClick={()=>setPreviewClick("#prevActive")}>ABOUT</a></li>
-            <li><a href = "#" onClick={()=>setPart2Active("#PART2")}>LIVE TOP 1</a></li>
-            <li><a href = "#">TrackList</a></li>
-          </ul>
-        </div>
-
-      </div>
+      <Navbar setPreviewClick = {setPreviewClick} setPart2Active = {setPart2Active}/>
 
       <div className = {previewClick === "#prevActive" ? "active" : ''} id="Slider-container">
         <motion.div className="Slider-contents" variants={textAnimation} initial = "initial" animate = "animate">

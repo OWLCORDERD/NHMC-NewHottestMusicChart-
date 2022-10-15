@@ -3,8 +3,6 @@ import data from "../../Image.json";
 import { useEffect } from "react";
 import { CgArrowLongRightC } from "react-icons/cg";
 import PART2 from "./PART2";
-import { useState } from "react";
-import { click } from "@testing-library/user-event/dist/click";
 import {AiFillHome} from "react-icons/ai";
 
 function About(props) {

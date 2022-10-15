@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap");
 
 /*ABOUT CONTAINER PART2 section */
-section #About-container {
+#About-container {
   position: relative;
   right : 0;
   width: 100%;
@@ -12,7 +12,6 @@ section #About-container {
   align-items: center;
   padding: 5rem;
   font-family: "Do Hyeon", sans-serif;
-  opacity: 0;
   transition : all 0.4s linear;
 }
 
@@ -111,9 +110,9 @@ section #About-container {
 #About-container #home-button{
   position: absolute;
   left : 5rem;
-  bottom : 10%;
+  bottom : 5%;
   width : 15rem;
-  height : 8rem;
+  height : 10rem;
   color : #fff;
   display: flex;
   flex-direction: row;
@@ -285,9 +284,9 @@ section #AboutTrack-container.active{
 #About-container .Preview{
   position: absolute;
   width: 20rem;
-  height: 15rem;
+  height: 10rem;
   right : 5rem;
-  bottom : 10%;
+  bottom : 5%;
   transform: translateY(-10%);
   display: flex;
   flex-direction: column;
@@ -297,4 +296,93 @@ section #AboutTrack-container.active{
   color: #fff;
   cursor: pointer;
   z-index: 10;
+}
+
+@media screen and (max-width : 1800px){
+  /*ABOUT CONTAINER PART2 section */
+
+#About-container #About-contents {
+  height: 25rem;
+}
+
+#About-contents .About-title {
+  display: block;
+  width: 100%;
+  height: 20rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+  letter-spacing: 0.5rem;
+}
+
+#About-contents .sub-contents {
+  font-size: 1.4rem;
+}
+
+#About-contents .MusicApp-icons {
+  position: relative;
+  width: 22rem;
+  height: 22rem;
+}
+
+/*ABOUT CONTAINER PART2 section */
+
+.PART2-section .About-contents {
+  position: relative;
+  width: 40rem;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  opacity: 1;
+}
+
+.PART2-section .AboutTrack-title {
+  position: relative;
+  width: 100%;
+  height: max-content;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.AboutTrack-title h1 {
+  font-size: 3rem;
+}
+
+.PART2-section .AboutTrack-subTitle {
+  font-size: 1.2rem;
+}
+
+.CHART1-Component .CHART1-MV {
+  position: relative;
+  width: 100%;
+  height: 40rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.CHART1-MV iframe {
+  width: 40rem;
+  height: 18rem;
+}
+
+.CHART1-MV .CHART1-Album {
+  width: 7rem;
+  height: 7rem;
+}
+
+.CHART1-MV .CHART1-name {
+  position: relative;
+  width: 100%;
+  height: 5rem;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
 }
