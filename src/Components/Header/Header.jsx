@@ -35,12 +35,10 @@ function Header() {
 
   const textAnimation = {
     initial : {
-      opacity : 0,
-      x : "-30%"
+      opacity : 0
     },
     animate : {
       opacity : 1,
-      x : 0,
       transition : {
         staggerChildren : 0.8,
         duration : 2

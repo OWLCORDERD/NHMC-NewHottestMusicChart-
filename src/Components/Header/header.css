@@ -1,3 +1,4 @@
+/*NHMC 최상위 Main component 부모*/
 .Header-container {
   position: relative;
   width: 100%;
@@ -10,6 +11,10 @@
   z-index: 200;
 }
 
+
+/*About NHMC 페이지 Part1 초기 영역 css
+(최상위 부모 컨텐츠인 Header-container 뒤에 
+absolute로 z-index -1값 뒤에 투명도 0 붙어있음)*/
 .Header-container #Preview-container {
   position: absolute;
   content: "";
@@ -22,12 +27,16 @@
   transition : all 1s ease-in-out;
 }
 
+/*About Part1 previewClick === (#prevClick) ? 
+"active" class toggle css*/
 .Header-container #Preview-container.active {
   opacity: 1;
   right : 0;
   animation: Action 2s;
 }
 
+/*Active toggle 시 투명도 0인 부모 컨텐츠(0%) 초기값 x축 100%에서
+100% 이벤트 발생 후 x축 0만큼 0.5초동안 움직이며 나타난다 */
 @keyframes Action{
   0%{
     transform: translateX(100%);
@@ -38,6 +47,8 @@
   }
 }
 
+/*Navbar css
+Nabvar는 어느 페이지에나 고정*/
 .navbar {
   position: fixed;
   z-index: 2500;
@@ -54,10 +65,12 @@
   font-family: var(--font-family);
 }
 
+/*스크롤 내릴 시 active Class Toggle event*/
 .navbar.active {
   background-color: #000;
 }
 
+/*NHMC LOGO css*/
 .navbar .logo {
   position: relative;
   width: max-content;
@@ -67,9 +80,11 @@
   justify-content: center;
   align-items: center;
   color: #fff;
+  cursor: pointer;
 }
 
 .logo h1 {
+  color : #fff;
   font-size: 3rem;
 }
 
@@ -77,6 +92,36 @@
   font-size: 1rem;
 }
 
+/*해상도 모바일&1800px 미만일 시 hamburger button (display block)*/
+.navbar .hamburger-menu{
+  display: none;
+  width : 50px;
+  height : 50px;
+  cursor : pointer;
+}
+
+.hamburger-menu span{
+  display: inline-block;
+  width : 100%;
+  height : 8px;
+  content : '';
+  background-color: #fff;
+}
+
+.hamburger-menu span:nth-child(1){
+  width : 35px;
+}
+
+.hamburger-menu span:nth-child(2){
+  width : 45px;
+}
+
+.hamburger-menu:hover.hamburger-menu span{
+  width : 100%;
+  transition: all 0.8s ease-in;
+}
+
+/*PC 1800px 이상 navbar-menu css*/
 .navbar .navbar-menu ul{
   width : 60rem;
   height : 5rem;
@@ -105,6 +150,7 @@
   border-bottom: 5px solid #fff;
 }
 
+/*Header 부모 컨텐츠의 Slider 영역 css*/
 .Header-container #Slider-container {
   position: absolute;
   right : 0;
@@ -117,19 +163,46 @@
   z-index: -1;
 }
 
+/*Preview-container Class = Active 일시 
+Slider 영역을 없앤 후 Header 부모 컨텐츠에 
+Preview-container opacity : 1 나타냄
+*/
 #Slider-container.active{
   display: none;
   transition: all 0.5s ease-in-out;
 }
 
+/*Preview-container Class = Active 일시 
+Slider 영역이 없어지면서 컨텐츠가 왼쪽으로 빠지면서
+Fade Out 애니메이션 느낌 나타내기 */
 #Slider-container.active .Slider-contents{
   margin-left : -100%;
   transition: all 1s ease-in-out;
 }
 
+/*Preview-container Class = Active 일시 
+Slider 영역이 없어지면서 About NHMC 버튼이 다음 화면으로
+Fade Out 넘어가는듯한 애니메이션 느낌 나타내기 */
 #Slider-container.active .Preview{
   margin-right : -100%;
   transition: all 1s ease-in-out;
+}
+
+/*Slider items css
+(Slide 들을 top,left 0 값에 고정시켜 absolute로 붙임)*/
+#Slider-container #First-Slider {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+/*각 Slider에 Active Class가 toggle 될시 display : block event 발생*/
+#Slider-container #First-Slider.active {
+  display: block;
+  animation: SliderImg 1s linear;
 }
 
 @keyframes SliderImg {
@@ -143,20 +216,7 @@
   }
 }
 
-#Slider-container #First-Slider {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  display: none;
-}
-
-#Slider-container #First-Slider.active {
-  display: block;
-  animation: SliderImg 1s linear;
-}
-
+/*Slide 배경 이미지 투명도 조정 before 영역 생성*/
 #First-Slider::before {
   position: absolute;
   width: 100%;
@@ -166,6 +226,7 @@
   z-index: 10;
 }
 
+/*각 Slide 영역들에 Album 이미지 영역 생성*/
 #First-Slider .ALBUM {
   position: absolute;
   top : 50%;
@@ -177,6 +238,7 @@
   box-shadow: 3px 2px 5px rgba(0, 0, 0, 0.8);
 }
 
+/*앨범 이미지 부모 영역 크기 내에 object-fit :cover로 조정*/
 #First-Slider img {
   position: absolute;
   width: 100%;
@@ -184,6 +246,7 @@
   object-fit: cover;
 }
 
+/*Slide 영역들에 슬라이드를 소개하는 Slider-contents 영역 생성*/
 #Slider-container .Slider-contents {
   position: absolute;
   left: 5rem;
@@ -207,6 +270,8 @@
   color: #fff;
 }
 
+/*Slider-contents 영역에 각 Slider-container에 
+Active Class를 Toggle 시킬 수 있는 버튼 서브 메뉴 생성*/
 .Slider-contents .Sub-menu {
   position: relative;
   width: 100%;
@@ -220,6 +285,9 @@
   cursor: pointer;
 }
 
+/*sub-menu에 slider를 select 할수 있는 button과
+select 하고 있는 그룹 명 두개를 Slider-select로 묶어
+display : flex & column 축으로 설정*/
 .Sub-menu .Slider-select {
   position: relative;
   width: 100%;
@@ -230,6 +298,8 @@
   align-items: flex-start;
 }
 
+/*slider를 select 하여 Active class를 영역마다
+부여 하게 될 select-button css */
 .Slider-select .select-button {
   position: relative;
   display: flex;
@@ -250,6 +320,8 @@
   transition: all 0.5s ease-in-out;
 }
 
+/*select 된 slider 영역의 가수&그룹 명 나타내는
+select-name css*/
 .Slider-select .select-name {
   width: 100%;
   display: flex;
@@ -273,6 +345,7 @@
   transition: all 1s ease-in-out;
 }
 
+/*About NHMC 페이지로 넘길 Preview 버튼 css*/
 .Header-container #Preview {
   position: absolute;
   width: 20rem;
@@ -288,8 +361,8 @@
   color: #fff;
   cursor: pointer;
   z-index: 10;
-  display: block;
 }
+
 
 #Preview.active{
   display: none;
@@ -310,5 +383,76 @@
   100% {
     opacity: 1;
     margin-right: 0;
+  }
+}
+
+/* 조건 : 1500px 이하 (PC에서 화면을 반 이상으로 줄였을시) 반응형 css*/
+@media screen and (max-width : 1500px) {
+  
+  .logo p {
+    font-size: 0.9rem;
+  }
+  
+  .navbar .navbar-menu ul{
+    display: none;
+  }
+
+  .navbar .hamburger-menu{
+    display: block;
+  }
+  
+  #First-Slider .ALBUM {
+    display: none;
+  }
+  
+  #First-Slider img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  #Slider-container .Slider-contents {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 2rem;
+    width: 45rem;
+    height: 40rem;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .Slider-contents p {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  
+  .Slider-contents h1 {
+    text-transform: uppercase;
+    font-size: 3rem;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .Slider-contents .Sub-menu {
+    width: 30rem;
+  }
+  
+  .Header-container #Preview {
+    position: absolute;
+    width: 15rem;
+    height: max-content;
+    right : 2rem;
+    bottom : 5rem;
+  }
+  
+  .Header-container .Arrow {
+    font-size: 5rem;
+    color: #fff;
+    animation: AnimationArrow 2s infinite;
   }
 }

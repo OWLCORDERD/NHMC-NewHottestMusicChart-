@@ -137,5 +137,12 @@
       "title" : "After LIKE",
       "group" : "IVE"
     }
+  ],
+  "News" : [
+    {
+      "image" : "./Image/여자아이들/Tomboy MV.png",
+      "content" : "(여자)아이들 8관왕 달성했다. 지난 5일 오후 방송된 SBS '인기가요'에서 여자아이들은 신곡 'TOMBOY'(톰보이)로 출연없이 1위를 차지하여..",
+      "date" : "2022.10.16"
+    }
   ]
 }

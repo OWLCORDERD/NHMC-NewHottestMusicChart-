@@ -107,16 +107,32 @@
   height: 100%;
 }
 
+#About-container .Preview{
+  position: absolute;
+  width: 15rem;
+  height: 10rem;
+  right : 0;
+  bottom : 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10;
+}
+
 #About-container #home-button{
   position: absolute;
   left : 5rem;
   bottom : 5%;
-  width : 15rem;
+  width : 10rem;
   height : 10rem;
   color : #fff;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
   align-items: flex-start;
   cursor : pointer;
 }
@@ -129,10 +145,12 @@
 
 #home-button .Home-icon{
   font-size: 2rem;
+  margin : 1rem 0;
 }
 
 #home-button h1{
   font-size: 2rem;
+  letter-spacing: 0.4rem;
 }
 
 /*ABOUT CONTAINER PART2 section */
@@ -204,7 +222,7 @@ section #AboutTrack-container.active{
 .PART2-section .CHART1-Component {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 50vh;
 }
 
 .CHART1-Component .CHART1-MV {
@@ -280,70 +298,59 @@ section #AboutTrack-container.active{
   z-index: 10;
 }
 
-
-#About-container .Preview{
-  position: absolute;
-  width: 20rem;
-  height: 10rem;
-  right : 5rem;
-  bottom : 5%;
-  transform: translateY(-10%);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  font-size: 2rem;
-  color: #fff;
-  cursor: pointer;
-  z-index: 10;
-}
-
 @media screen and (max-width : 1800px){
   /*ABOUT CONTAINER PART2 section */
 
+#About-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10rem 5rem;
+  font-family: "Do Hyeon", sans-serif;
+  transition : all 0.4s linear;
+}
+
 #About-container #About-contents {
-  height: 25rem;
+  height: 20rem;
 }
 
 #About-contents .About-title {
   display: block;
   width: 100%;
-  height: 20rem;
+  height: 15rem;
   font-size: 2.5rem;
-  font-weight: bold;
-  letter-spacing: 0.5rem;
+  text-align: center;
 }
 
 #About-contents .sub-contents {
   font-size: 1.4rem;
+  text-align: center;
 }
 
 #About-contents .MusicApp-icons {
   position: relative;
-  width: 22rem;
-  height: 22rem;
+  width: 18rem;
+  height: 18rem;
 }
 
 /*ABOUT CONTAINER PART2 section */
 
-.PART2-section .About-contents {
-  position: relative;
-  width: 40rem;
-  height: 20rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  opacity: 1;
+#AboutTrack-container .PART2-section{
+  height : 70vh;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  place-items: center;
+}
+
+section #AboutTrack-container {
+  padding: 10rem 3rem 0rem 3rem;
 }
 
 .PART2-section .AboutTrack-title {
-  position: relative;
-  width: 100%;
-  height: max-content;
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
 }
 
 .AboutTrack-title h1 {
@@ -352,12 +359,16 @@ section #AboutTrack-container.active{
 
 .PART2-section .AboutTrack-subTitle {
   font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .CHART1-Component .CHART1-MV {
   position: relative;
   width: 100%;
-  height: 40rem;
+  height: 30rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -367,13 +378,14 @@ section #AboutTrack-container.active{
 }
 
 .CHART1-MV iframe {
-  width: 40rem;
-  height: 18rem;
+  position: relative;
+  width: 30rem;
+  height: 20rem;
 }
 
 .CHART1-MV .CHART1-Album {
-  width: 7rem;
-  height: 7rem;
+  width: 5rem;
+  height: 5rem;
 }
 
 .CHART1-MV .CHART1-name {
@@ -381,8 +393,37 @@ section #AboutTrack-container.active{
   width: 100%;
   height: 5rem;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: #fff;
+}
+
+.CHART1-MV .CHART1-PREVIEW {
+  position: relative;
+  width: 10rem;
+  height: 3rem;
+  border: none;
+  background-color: rgb(55, 110, 4);
+  color: #fff;
+  font-family: var(--font-family);
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+#AboutTrack-container .Preview {
+  position: absolute;
+  width: 20rem;
+  height: 10rem;
+  left : 0;
+  bottom : 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10;
 }
 
 }
