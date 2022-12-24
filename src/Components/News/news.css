@@ -32,3 +32,74 @@
     font-size: 1.2rem;
 }
 
+.News-container .News-Peed{
+    position: relative;
+    width : 100%;
+    height : 60vh;
+    overflow-y : auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    place-items: center;
+    padding : 2rem;
+}
+
+.News-Peed::-webkit-scrollbar{
+    width : 1rem;
+    background-color: #000;
+}
+
+.News-Peed::-webkit-scrollbar-thumb{
+    background-color: #fff;
+    border-radius: 0.5rem;
+}
+
+.News-Peed .Peed-item{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width : 100%;
+    height : 15rem;
+}
+
+.Peed-item .Peed-image{
+    display: block;
+    width : 20rem;
+    height : 10rem;
+    overflow: hidden;
+}
+
+.Peed-image img{
+    width : 100%;
+    height : 100%;
+    object-fit: cover;
+}
+
+.Peed-item .Peed-content{
+    width : 50rem;
+    height : 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    color : #fff;
+    font-size: 1.2rem;
+}
+
+.Peed-content .Peed-title{
+    width : 100%;
+    height : 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.Peed-title h1{
+    font-family: var(--DoHyeon-font);
+    font-size: 1.5rem;
+}
+
+.Peed-title p{
+    font-size: 1.2rem;
+    font-family: var(--DoHyeon-font);
+}
